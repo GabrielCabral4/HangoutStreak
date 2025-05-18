@@ -4,18 +4,27 @@ import os
 # SECURITY
 DEBUG = False
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'change-me-in-production')
-ALLOWED_HOSTS = ['.pythonanywhere.com']  # Será atualizado com seu domínio
+ALLOWED_HOSTS = ['.pythonanywhere.com']
 
-# Database - será configurado no PythonAnywhere
+# Database - usando PyMySQL
+import pymysql
+pymysql.install_as_MySQLdb()
+
+# Garantindo que o nome do banco de dados tenha o $ escapado
+db_name = os.getenv('DB_NAME', 'HangoutStreak$default').replace('\\$', '$')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
+        'NAME': db_name,
+        'USER': os.getenv('DB_USER', 'HangoutStreak'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'Gabriel2004'),
+        'HOST': os.getenv('DB_HOST', 'HangoutStreak.mysql.pythonanywhere-services.com'),
+        'PORT': '',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
+            'sql_mode': 'STRICT_TRANS_TABLES',
         },
     }
 }

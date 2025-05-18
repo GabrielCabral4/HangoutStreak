@@ -6,7 +6,12 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hangout_streak.settings')
+    # Check if we're on PythonAnywhere
+    if 'PYTHONANYWHERE_SITE' in os.environ:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hangout_streak.settings_prod')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hangout_streak.settings_dev')
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
