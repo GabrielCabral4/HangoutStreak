@@ -13,4 +13,11 @@ urlpatterns = [
     path('<int:event_id>/leave/', views.event_leave, name='leave'),
     path('<int:event_id>/photos/', views.event_photos, name='event_photos'),
     path('photos/<int:photo_id>/delete/', views.delete_event_photo, name='delete_photo'),
+    
+    # Story URLs
+    path('stories/', views.story_feed, name='story_feed'),
+    path('stories/create/', views.create_story, name='create_story'),
+    path('stories/<int:story_id>/', views.view_story, name='view_story'),
+    path('stories/<int:story_id>/react/', views.react_to_story, name='react_to_story'),
+    path('stories/<int:story_id>/comment/', views.comment_on_story, name='comment_on_story'),
 ] 
