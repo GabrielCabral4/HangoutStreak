@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
+env/
 build/
 develop-eggs/
 dist/
@@ -15,21 +16,21 @@ lib64/
 parts/
 sdist/
 var/
-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 
 # Django
 *.log
-local_settings.py
+*.pot
+*.pyc
 db.sqlite3
-db.sqlite3-journal
 media/
+staticfiles/
 
 # Virtual Environment
 venv/
-ENV/
+.env
 
 # IDE
 .idea/
@@ -37,14 +38,22 @@ ENV/
 *.swp
 *.swo
 
-# Environment variables
-.env
+# OS
+.DS_Store
+Thumbs.db
+
+# Local development settings
+local_settings.py
+
+# Coverage
+.coverage
+htmlcov/
+
+# Logs
+logs/
 
 # Backups
 backup_*.json
-
-# Static files
-staticfiles/
 
 # Node
 node_modules/
