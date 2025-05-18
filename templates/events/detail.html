@@ -1,0 +1,375 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ event.title }} - HangoutStreak{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Imagem do Evento -->
+            {% if event.image %}
+                <img src="{{ event.image.url }}" class="img-fluid rounded mb-4" alt="{{ event.title }}">
+            {% endif %}
+            
+            <!-- Título e Ações -->
+            <div class="d-flex justify-content-between align-items-start mb-4">
+                <div>
+                    <h1 class="mb-2">{{ event.title }}</h1>
+                    <p class="text-muted mb-0">
+                        Criado por {{ event.creator.username }} em {{ event.created_at|date:"d/m/Y" }}
+                    </p>
+                </div>
+                {% if is_creator %}
+                    <div class="btn-group">
+                        <a href="{% url 'events:edit' event.id %}" class="btn btn-outline-primary">
+                            <i class="fas fa-edit me-1"></i>Editar
+                        </a>
+                        <a href="{% url 'events:delete' event.id %}" class="btn btn-outline-danger">
+                            <i class="fas fa-trash-alt me-1"></i>Deletar
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <!-- Informações do Evento -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title">Sobre o Evento</h5>
+                        <p class="card-text">{{ event.description }}</p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6><i class="fas fa-map-marker-alt me-2"></i>Local</h6>
+                            <p class="mb-0">{{ event.location }}</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6><i class="fas fa-clock me-2"></i>Data e Hora</h6>
+                            <p class="mb-0">{{ event.date|date:"d/m/Y H:i" }}</p>
+                        </div>
+                        {% if event.max_participants > 0 %}
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-users me-2"></i>Vagas</h6>
+                                <p class="mb-0">{{ event.participants.count }} / {{ event.max_participants }}</p>
+                            </div>
+                        {% endif %}
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-lock me-2"></i>Privacidade</h6>
+                            <p class="mb-0">{{ event.is_private|yesno:"Privado,Público" }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Galeria de Fotos -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-images me-2"></i>Fotos do Evento
+                        </h5>
+                        <div>
+                            {% if is_participant or is_creator %}
+                                <a href="{% url 'events:event_photos' event.id %}" class="btn btn-outline-primary btn-sm me-2">
+                                    <i class="fas fa-eye me-1"></i>Ver Todas
+                                </a>
+                                <a href="{% url 'events:event_photos' event.id %}" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-upload me-1"></i>Adicionar Fotos
+                                </a>
+                            {% else %}
+                                <a href="{% url 'events:event_photos' event.id %}" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-eye me-1"></i>Ver Todas
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {% if event.photos.all %}
+                        <div class="row g-3">
+                            {% for photo in event.photos.all|slice:":6" %}
+                                <div class="col-md-4">
+                                    <img src="{{ photo.image.url }}" class="img-fluid rounded" alt="Foto do evento" style="height: 150px; width: 100%; object-fit: cover;">
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% if event.photos.count > 6 %}
+                            <div class="text-center mt-3">
+                                <a href="{% url 'events:event_photos' event.id %}" class="btn btn-link">
+                                    Ver mais {{ event.photos.count|add:"-6" }} fotos
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <div class="text-center py-4">
+                            <i class="fas fa-camera text-muted fa-3x mb-3"></i>
+                            <h6 class="text-muted">Nenhuma foto ainda</h6>
+                            {% if is_participant or is_creator %}
+                                <p class="text-muted mb-0">Seja o primeiro a adicionar uma foto!</p>
+                            {% else %}
+                                <p class="text-muted mb-0">Participe do evento para adicionar fotos.</p>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Chat do Evento -->
+            {% if is_participant %}
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-comments me-2"></i>Chat do Evento
+                    </h5>
+                </div>
+                <div class="card-body p-0">
+                    <div id="chat-messages" class="chat-messages p-3" style="height: 400px; overflow-y: auto;">
+                        {% for message in event.messages.all %}
+                        <div class="chat-message mb-3">
+                            <div class="d-flex align-items-start">
+                                {% if message.user.profile.avatar %}
+                                    <img src="{{ message.user.profile.avatar.url }}" class="rounded-circle me-2" style="width: 32px; height: 32px;" alt="{{ message.user.username }}">
+                                {% else %}
+                                    <i class="fas fa-user-circle fa-2x me-2 text-muted"></i>
+                                {% endif %}
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <strong>{{ message.user.username }}</strong>
+                                        <small class="text-muted">{{ message.timestamp|date:"d/m/Y H:i" }}</small>
+                                    </div>
+                                    <p class="mb-0">{{ message.content }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="p-3 border-top">
+                        <form id="chat-form" class="mb-0">
+                            <div class="input-group">
+                                <input type="text" id="chat-input" class="form-control" placeholder="Digite sua mensagem..." required>
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const eventId = {{ event.id }};
+                const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                let chatSocket = null;
+                let isConnecting = false;
+                const chatMessages = document.getElementById('chat-messages');
+                const chatForm = document.getElementById('chat-form');
+                const chatInput = document.getElementById('chat-input');
+                const MAX_RECONNECT_DELAY = 5000;
+                let reconnectDelay = 1000;
+
+                function updateConnectionStatus(connected) {
+                    chatInput.disabled = !connected;
+                    chatForm.querySelector('button').disabled = !connected;
+                    if (!connected) {
+                        chatInput.placeholder = "Conectando ao chat...";
+                    } else {
+                        chatInput.placeholder = "Digite sua mensagem...";
+                    }
+                }
+
+                function connectWebSocket() {
+                    if (isConnecting) return;
+                    isConnecting = true;
+                    updateConnectionStatus(false);
+
+                    chatSocket = new WebSocket(
+                        wsProtocol + '//' + window.location.host + '/ws/events/' + eventId + '/chat/'
+                    );
+
+                    chatSocket.onopen = function(e) {
+                        console.log('WebSocket connection established');
+                        isConnecting = false;
+                        reconnectDelay = 1000; // Reset delay on successful connection
+                        updateConnectionStatus(true);
+                    };
+
+                    chatSocket.onmessage = function(e) {
+                        console.log('Message received:', e.data);
+                        try {
+                            const data = JSON.parse(e.data);
+                            const timestamp = new Date(data.timestamp).toLocaleString('pt-BR');
+                            
+                            const avatarHtml = data.user_avatar 
+                                ? `<img src="${data.user_avatar}" class="rounded-circle me-2" style="width: 32px; height: 32px;" alt="${data.username}">`
+                                : `<i class="fas fa-user-circle fa-2x me-2 text-muted"></i>`;
+                            
+                            const messageHtml = `
+                                <div class="chat-message mb-3">
+                                    <div class="d-flex align-items-start">
+                                        ${avatarHtml}
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <strong>${data.username}</strong>
+                                                <small class="text-muted">${timestamp}</small>
+                                            </div>
+                                            <p class="mb-0">${data.message}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            
+                            chatMessages.insertAdjacentHTML('beforeend', messageHtml);
+                            chatMessages.scrollTop = chatMessages.scrollHeight;
+                        } catch (error) {
+                            console.error('Error processing message:', error);
+                        }
+                    };
+
+                    chatSocket.onclose = function(e) {
+                        console.log('WebSocket connection closed. Code:', e.code, 'Reason:', e.reason);
+                        isConnecting = false;
+                        updateConnectionStatus(false);
+                        
+                        // Implement exponential backoff for reconnection
+                        setTimeout(() => {
+                            reconnectDelay = Math.min(reconnectDelay * 1.5, MAX_RECONNECT_DELAY);
+                            connectWebSocket();
+                        }, reconnectDelay);
+                    };
+
+                    chatSocket.onerror = function(e) {
+                        console.error('WebSocket error:', e);
+                        isConnecting = false;
+                        updateConnectionStatus(false);
+                    };
+                }
+
+                connectWebSocket();
+
+                chatForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const message = chatInput.value.trim();
+                    if (message && chatSocket && chatSocket.readyState === WebSocket.OPEN) {
+                        try {
+                            console.log('Sending message:', message);
+                            chatSocket.send(JSON.stringify({
+                                'message': message
+                            }));
+                            chatInput.value = '';
+                        } catch (error) {
+                            console.error('Error sending message:', error);
+                            alert('Erro ao enviar mensagem. Por favor, tente novamente.');
+                        }
+                    } else if (chatSocket.readyState !== WebSocket.OPEN) {
+                        console.log('WebSocket not connected. Current state:', chatSocket.readyState);
+                        alert('Chat não está conectado. Tentando reconectar...');
+                        connectWebSocket();
+                    }
+                });
+
+                // Scroll to bottom on load
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Reconnect if the page becomes visible again
+                document.addEventListener('visibilitychange', function() {
+                    if (document.visibilityState === 'visible' && (!chatSocket || chatSocket.readyState !== WebSocket.OPEN)) {
+                        console.log('Page visible, reconnecting WebSocket');
+                        connectWebSocket();
+                    }
+                });
+            </script>
+            {% else %}
+            <div class="card shadow-sm mb-4">
+                <div class="card-body text-center">
+                    <i class="fas fa-lock fa-3x text-muted mb-3"></i>
+                    <h5>Chat Disponível Apenas para Participantes</h5>
+                    <p class="text-muted mb-0">Participe do evento para acessar o chat.</p>
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Participantes -->
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Participantes</h5>
+                    <div class="row g-3">
+                        {% for participant in event.participants.all %}
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    {% if participant.profile.avatar %}
+                                        <img src="{{ participant.profile.avatar.url }}" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="{{ participant.username }}">
+                                    {% else %}
+                                        <i class="fas fa-user-circle fa-2x me-2 text-muted"></i>
+                                    {% endif %}
+                                    <div>
+                                        <h6 class="mb-0">{{ participant.username }}</h6>
+                                        {% if participant == event.creator %}
+                                            <small class="text-primary">Organizador</small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    {% if event.is_past %}
+                        <div class="alert alert-secondary mb-3">
+                            <i class="fas fa-history me-2"></i>Este evento já aconteceu
+                        </div>
+                    {% else %}
+                        {% if is_participant %}
+                            <div class="alert alert-success mb-3">
+                                <i class="fas fa-check-circle me-2"></i>Você está participando!
+                            </div>
+                            {% if not is_creator %}
+                                <form action="{% url 'events:leave' event.id %}" method="post" class="d-grid">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-outline-danger">
+                                        <i class="fas fa-sign-out-alt me-2"></i>Deixar Evento
+                                    </button>
+                                </form>
+                            {% endif %}
+                        {% elif can_join %}
+                            <form action="{% url 'events:join' event.id %}" method="post" class="d-grid">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-user-plus me-2"></i>Participar
+                                </button>
+                            </form>
+                        {% else %}
+                            <div class="alert alert-warning mb-0">
+                                <i class="fas fa-exclamation-circle me-2"></i>Este evento está lotado
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+            
+            {% if not event.is_past %}
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Compartilhar</h5>
+                        <div class="d-grid gap-2">
+                            <a href="https://wa.me/?text={{ request.build_absolute_uri }}" target="_blank" class="btn btn-success">
+                                <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                            </a>
+                            <a href="https://telegram.me/share/url?url={{ request.build_absolute_uri }}" target="_blank" class="btn btn-info">
+                                <i class="fab fa-telegram me-2"></i>Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

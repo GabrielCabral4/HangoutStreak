@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Conversas - HangoutStreak{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3 mb-0">Minhas Conversas</h1>
+                <a href="{% url 'chat:new_chat' %}" class="btn btn-primary">
+                    <i class="fas fa-plus me-2"></i>Nova Conversa
+                </a>
+            </div>
+
+            {% if chat_data %}
+                <div class="card shadow-sm">
+                    <div class="list-group list-group-flush">
+                        {% for data in chat_data %}
+                            <a href="{% url 'chat:detail' data.chat.id %}" class="list-group-item list-group-item-action">
+                                <div class="d-flex align-items-center">
+                                    {% if data.other_user.profile.avatar %}
+                                        <img src="{{ data.other_user.profile.avatar.url }}" class="rounded-circle me-3" style="width: 48px; height: 48px;" alt="{{ data.other_user.username }}">
+                                    {% else %}
+                                        <i class="fas fa-user-circle fa-3x me-3 text-muted"></i>
+                                    {% endif %}
+                                    
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="mb-0">{{ data.other_user.get_full_name|default:data.other_user.username }}</h6>
+                                            {% if data.last_message %}
+                                                <small class="text-muted">{{ data.last_message.timestamp|date:"d/m/Y H:i" }}</small>
+                                            {% endif %}
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <p class="text-muted mb-0 text-truncate" style="max-width: 70%;">
+                                                {% if data.last_message %}
+                                                    {% if data.last_message.sender == request.user %}
+                                                        <span class="text-primary">Você:</span>
+                                                    {% endif %}
+                                                    {{ data.last_message.content }}
+                                                {% else %}
+                                                    <em>Nenhuma mensagem</em>
+                                                {% endif %}
+                                            </p>
+                                            
+                                            {% if data.unread_count > 0 %}
+                                                <span class="badge bg-primary rounded-pill">{{ data.unread_count }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <div class="card shadow-sm">
+                    <div class="card-body text-center py-5">
+                        <i class="fas fa-comments fa-3x text-muted mb-3"></i>
+                        <h5>Nenhuma Conversa</h5>
+                        <p class="text-muted mb-3">Você ainda não iniciou nenhuma conversa.</p>
+                        <a href="{% url 'chat:new_chat' %}" class="btn btn-primary">
+                            <i class="fas fa-plus me-2"></i>Iniciar Nova Conversa
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

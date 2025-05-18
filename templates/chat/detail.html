@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+
+{% block title %}Chat com {{ other_user.get_full_name|default:other_user.username }} - HangoutStreak{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <!-- Chat Header -->
+                <div class="card-header bg-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <a href="{% url 'chat:inbox' %}" class="btn btn-outline-primary btn-sm me-3">
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                            {% if other_user.profile.avatar %}
+                                <img src="{{ other_user.profile.avatar.url }}" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="{{ other_user.username }}">
+                            {% else %}
+                                <i class="fas fa-user-circle fa-2x me-2 text-muted"></i>
+                            {% endif %}
+                            <div>
+                                <h5 class="mb-0">{{ other_user.get_full_name|default:other_user.username }}</h5>
+                                <small class="text-muted">{{ other_user.username }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div id="chat-messages" class="chat-messages p-3" style="height: 500px; overflow-y: auto;">
+                    <div id="messages-container">
+                        <!-- Messages will be loaded here -->
+                    </div>
+                    <div id="loading-messages" class="text-center py-3 d-none">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Carregando...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Input -->
+                <div class="card-footer bg-white">
+                    <form id="chat-form" class="mb-0">
+                        <div class="input-group">
+                            <input type="text" id="chat-input" class="form-control" placeholder="Digite sua mensagem..." required>
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const chatId = {{ chat.id }};
+    const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    let chatSocket = null;
+    let isConnecting = false;
+    const chatMessages = document.getElementById('chat-messages');
+    const messagesContainer = document.getElementById('messages-container');
+    const loadingMessages = document.getElementById('loading-messages');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const MAX_RECONNECT_DELAY = 5000;
+    let reconnectDelay = 1000;
+    let isLoadingMore = false;
+    let hasMoreMessages = true;
+    let currentPage = 1;
+
+    function updateConnectionStatus(connected) {
+        chatInput.disabled = !connected;
+        chatForm.querySelector('button').disabled = !connected;
+        if (!connected) {
+            chatInput.placeholder = "Conectando ao chat...";
+        } else {
+            chatInput.placeholder = "Digite sua mensagem...";
+        }
+    }
+
+    function connectWebSocket() {
+        if (isConnecting) return;
+        isConnecting = true;
+        updateConnectionStatus(false);
+
+        chatSocket = new WebSocket(
+            wsProtocol + '//' + window.location.host + '/ws/chat/' + chatId + '/'
+        );
+
+        chatSocket.onopen = function(e) {
+            console.log('WebSocket connection established');
+            isConnecting = false;
+            reconnectDelay = 1000; // Reset delay on successful connection
+            updateConnectionStatus(true);
+            loadInitialMessages(); // Load initial messages when connection is established
+        };
+
+        chatSocket.onmessage = function(e) {
+            console.log('Message received:', e.data);
+            try {
+                const data = JSON.parse(e.data);
+                appendMessage(data);
+            } catch (error) {
+                console.error('Error processing message:', error);
+            }
+        };
+
+        chatSocket.onclose = function(e) {
+            console.log('WebSocket connection closed. Code:', e.code, 'Reason:', e.reason);
+            isConnecting = false;
+            updateConnectionStatus(false);
+            
+            setTimeout(() => {
+                reconnectDelay = Math.min(reconnectDelay * 1.5, MAX_RECONNECT_DELAY);
+                connectWebSocket();
+            }, reconnectDelay);
+        };
+
+        chatSocket.onerror = function(e) {
+            console.error('WebSocket error:', e);
+            isConnecting = false;
+            updateConnectionStatus(false);
+        };
+    }
+
+    function appendMessage(data) {
+        const messageHtml = `
+            <div class="chat-message mb-3 ${data.is_self ? 'text-end' : ''}">
+                <div class="d-inline-block">
+                    <div class="message-bubble p-2 rounded ${data.is_self ? 'bg-primary text-white' : 'bg-light'}">
+                        ${data.content}
+                    </div>
+                    <small class="text-muted d-block mt-1">
+                        ${new Date(data.timestamp).toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'})}
+                        ${data.is_self && data.is_read ? '<i class="fas fa-check-double ms-1"></i>' : ''}
+                    </small>
+                </div>
+            </div>
+        `;
+        
+        messagesContainer.insertAdjacentHTML('beforeend', messageHtml);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    async function loadInitialMessages() {
+        try {
+            const response = await fetch(`{% url 'chat:load_messages' chat.id %}?page=1`);
+            const data = await response.json();
+            
+            if (data.messages.length > 0) {
+                const fragment = document.createDocumentFragment();
+                
+                // Reverse the messages array to show them in chronological order
+                data.messages.reverse().forEach(message => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = `chat-message mb-3 ${message.is_self ? 'text-end' : ''}`;
+                    messageDiv.innerHTML = `
+                        <div class="d-inline-block">
+                            <div class="message-bubble p-2 rounded ${message.is_self ? 'bg-primary text-white' : 'bg-light'}">
+                                ${message.content}
+                            </div>
+                            <small class="text-muted d-block mt-1">
+                                ${new Date(message.timestamp).toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'})}
+                                ${message.is_self && message.is_read ? '<i class="fas fa-check-double ms-1"></i>' : ''}
+                            </small>
+                        </div>
+                    `;
+                    fragment.appendChild(messageDiv);
+                });
+                
+                messagesContainer.appendChild(fragment);
+                currentPage = 1;
+                hasMoreMessages = data.has_next;
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        } catch (error) {
+            console.error('Error loading initial messages:', error);
+        }
+    }
+
+    async function loadMoreMessages() {
+        if (isLoadingMore || !hasMoreMessages) return;
+        
+        isLoadingMore = true;
+        loadingMessages.classList.remove('d-none');
+        
+        try {
+            const response = await fetch(`{% url 'chat:load_messages' chat.id %}?page=${currentPage + 1}`);
+            const data = await response.json();
+            
+            if (data.messages.length > 0) {
+                const fragment = document.createDocumentFragment();
+                
+                data.messages.forEach(message => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = `chat-message mb-3 ${message.is_self ? 'text-end' : ''}`;
+                    messageDiv.innerHTML = `
+                        <div class="d-inline-block">
+                            <div class="message-bubble p-2 rounded ${message.is_self ? 'bg-primary text-white' : 'bg-light'}">
+                                ${message.content}
+                            </div>
+                            <small class="text-muted d-block mt-1">
+                                ${new Date(message.timestamp).toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'})}
+                                ${message.is_self && message.is_read ? '<i class="fas fa-check-double ms-1"></i>' : ''}
+                            </small>
+                        </div>
+                    `;
+                    fragment.prepend(messageDiv);
+                });
+                
+                messagesContainer.prepend(fragment);
+                currentPage++;
+                hasMoreMessages = data.has_next;
+            } else {
+                hasMoreMessages = false;
+            }
+        } catch (error) {
+            console.error('Error loading messages:', error);
+        } finally {
+            isLoadingMore = false;
+            loadingMessages.classList.add('d-none');
+        }
+    }
+
+    // Initialize WebSocket connection
+    connectWebSocket();
+
+    // Handle form submission
+    chatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const message = chatInput.value.trim();
+        if (message && chatSocket && chatSocket.readyState === WebSocket.OPEN) {
+            try {
+                console.log('Sending message:', message);
+                chatSocket.send(JSON.stringify({
+                    'message': message
+                }));
+                chatInput.value = '';
+            } catch (error) {
+                console.error('Error sending message:', error);
+                alert('Erro ao enviar mensagem. Por favor, tente novamente.');
+            }
+        } else if (chatSocket.readyState !== WebSocket.OPEN) {
+            console.log('WebSocket not connected. Current state:', chatSocket.readyState);
+            alert('Chat não está conectado. Tentando reconectar...');
+            connectWebSocket();
+        }
+    });
+
+    // Load more messages when scrolling to top
+    chatMessages.addEventListener('scroll', function() {
+        if (chatMessages.scrollTop === 0) {
+            loadMoreMessages();
+        }
+    });
+
+    // Reconnect if the page becomes visible again
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible' && (!chatSocket || chatSocket.readyState !== WebSocket.OPEN)) {
+            console.log('Page visible, reconnecting WebSocket');
+            connectWebSocket();
+        }
+    });
+</script>
+{% endblock %} 

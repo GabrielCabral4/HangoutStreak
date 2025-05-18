@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block title %}Stories - HangoutStreak{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Streaks Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Seus Streaks</h5>
+                    <div class="d-flex overflow-auto">
+                        {% for streak in streaks %}
+                            <div class="text-center me-4">
+                                {% if streak.other_user.profile.avatar %}
+                                    <img src="{{ streak.other_user.profile.avatar.url }}" class="rounded-circle mb-2" style="width: 60px; height: 60px;" alt="{{ streak.other_user.username }}">
+                                {% else %}
+                                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                                        <i class="fas fa-user text-muted"></i>
+                                    </div>
+                                {% endif %}
+                                <div class="small">
+                                    <strong>{{ streak.other_user.username }}</strong>
+                                    <div class="streak-count {% if not streak.is_active %}text-danger{% endif %}">
+                                        🔥 {{ streak.count }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p class="text-muted mb-0">Você ainda não tem nenhum streak. Interaja com as stories dos seus amigos para começar!</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Story Button -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <a href="{% url 'events:create_story' %}" class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i>Criar Story
+            </a>
+        </div>
+    </div>
+
+    <!-- Stories Feed -->
+    <div class="row">
+        {% for story in stories %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <!-- Story Header -->
+                    <div class="card-header bg-white">
+                        <div class="d-flex align-items-center">
+                            {% if story.user.profile.avatar %}
+                                <img src="{{ story.user.profile.avatar.url }}" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="{{ story.user.username }}">
+                            {% else %}
+                                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                                    <i class="fas fa-user text-muted"></i>
+                                </div>
+                            {% endif %}
+                            <div>
+                                <h6 class="mb-0">{{ story.user.username }}</h6>
+                                <small class="text-muted">{{ story.created_at|timesince }} atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story Content -->
+                    <a href="{% url 'events:view_story' story.id %}" class="text-decoration-none">
+                        {% if story.image %}
+                            <img src="{{ story.image.url }}" class="card-img-top" alt="Story image">
+                        {% endif %}
+                        {% if story.text %}
+                            <div class="card-body">
+                                <p class="card-text text-dark">{{ story.text }}</p>
+                            </div>
+                        {% endif %}
+                    </a>
+
+                    <!-- Story Footer -->
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted me-3">
+                                    <i class="far fa-eye me-1"></i>{{ story.view_count }}
+                                </small>
+                                <small class="text-muted me-3">
+                                    <i class="far fa-comment me-1"></i>{{ story.comment_count }}
+                                </small>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="reactionDropdown{{ story.id }}" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="far fa-smile me-1"></i>Reagir
+                                    </button>
+                                    <ul class="dropdown-menu reaction-options" aria-labelledby="reactionDropdown{{ story.id }}">
+                                        <li><button class="dropdown-item reaction-option" data-story-id="{{ story.id }}" data-reaction-type="like">👍 Curtir</button></li>
+                                        <li><button class="dropdown-item reaction-option" data-story-id="{{ story.id }}" data-reaction-type="love">❤️ Amor</button></li>
+                                        <li><button class="dropdown-item reaction-option" data-story-id="{{ story.id }}" data-reaction-type="haha">😂 Haha</button></li>
+                                        <li><button class="dropdown-item reaction-option" data-story-id="{{ story.id }}" data-reaction-type="wow">😮 Uau</button></li>
+                                        <li><button class="dropdown-item reaction-option" data-story-id="{{ story.id }}" data-reaction-type="sad">😢 Triste</button></li>
+                                        <li><button class="dropdown-item reaction-option" data-story-id="{{ story.id }}" data-reaction-type="angry">😠 Grr</button></li>
+                                    </ul>
+                                </div>
+                                <div class="reactions-display ms-2">
+                                    {% for reaction in story.reactions.all %}
+                                        <span class="me-1" title="{{ reaction.user.username }}">
+                                            {% if reaction.reaction_type == 'like' %}👍
+                                            {% elif reaction.reaction_type == 'love' %}❤️
+                                            {% elif reaction.reaction_type == 'haha' %}😂
+                                            {% elif reaction.reaction_type == 'wow' %}😮
+                                            {% elif reaction.reaction_type == 'sad' %}😢
+                                            {% elif reaction.reaction_type == 'angry' %}😠
+                                            {% endif %}
+                                        </span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment Form -->
+                        <form class="mt-3 comment-form" data-story-id="{{ story.id }}">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm" placeholder="Adicionar comentário...">
+                                <button class="btn btn-sm btn-outline-primary" type="submit">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info">
+                    Não há stories ativos no momento. Seja o primeiro a criar um!
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle reactions
+    document.querySelectorAll('.reaction-option').forEach(button => {
+        button.addEventListener('click', async function() {
+            const storyId = this.dataset.storyId;
+            const reactionType = this.dataset.reactionType;
+            
+            try {
+                const response = await fetch(`/events/stories/${storyId}/react/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-CSRFToken': getCookie('csrftoken')
+                    },
+                    body: `reaction_type=${reactionType}`
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    // Update UI
+                    location.reload();
+                } else {
+                    alert('Error adding reaction');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error adding reaction');
+            }
+        });
+    });
+
+    // Handle comments
+    document.querySelectorAll('.comment-form').forEach(form => {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const storyId = this.dataset.storyId;
+            const input = this.querySelector('input');
+            const text = input.value.trim();
+
+            if (!text) return;
+
+            try {
+                const response = await fetch(`/events/stories/${storyId}/comment/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-CSRFToken': getCookie('csrftoken')
+                    },
+                    body: `text=${encodeURIComponent(text)}`
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    // Clear input and update UI
+                    input.value = '';
+                    location.reload();
+                } else {
+                    alert('Error adding comment');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error adding comment');
+            }
+        });
+    });
+
+    // Get CSRF token from cookies
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+});
+</script>
+{% endblock %} 

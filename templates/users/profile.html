@@ -1,0 +1,110 @@
+{% extends "base/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Perfil - {{ user.username }} - HangoutStreak{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <!-- Informações do Perfil -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    {% if user.profile.avatar %}
+                        <img class="rounded-circle img-fluid mb-3" style="width: 150px; height: 150px; object-fit: cover;"
+                             src="{{ user.profile.avatar.url }}" alt="{{ user.username }}">
+                    {% else %}
+                        <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-3" 
+                             style="width: 150px; height: 150px;">
+                            <i class="fas fa-user text-muted fa-4x"></i>
+                        </div>
+                    {% endif %}
+                    <h4 class="card-title">{{ user.username }}</h4>
+                    <p class="text-muted">{{ user.email }}</p>
+                    <p class="card-text">{{ user.profile.bio|default:"Sem biografia ainda." }}</p>
+                    
+                    <!-- Estatísticas -->
+                    <div class="row text-center mt-4">
+                        <div class="col">
+                            <h5 class="mb-0">{{ user.profile.highest_streak }}</h5>
+                            <small class="text-muted">Maior Streak</small>
+                        </div>
+                        <div class="col">
+                            <h5 class="mb-0">{{ user.profile.total_events }}</h5>
+                            <small class="text-muted">Eventos</small>
+                        </div>
+                        <div class="col">
+                            <h5 class="mb-0">{{ user.profile.friends.count }}</h5>
+                            <small class="text-muted">Amigos</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conquistas -->
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">🏆 Conquistas</h5>
+                    
+                    {% if user.profile.achievements.all %}
+                        <div class="row g-3">
+                            {% for achievement in user.profile.achievements.all %}
+                                <div class="col-md-6">
+                                    <div class="achievement-card p-3 border rounded">
+                                        <div class="d-flex align-items-center">
+                                            <div class="achievement-icon me-3">
+                                                <span style="font-size: 2rem;">{{ achievement.icon }}</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-1">{{ achievement.name }}</h6>
+                                                <p class="mb-0 small text-muted">{{ achievement.description }}</p>
+                                                <small class="text-primary">Conquistado em {{ achievement.created_at|date:"d/m/Y" }}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="text-center py-4">
+                            <div class="mb-3">
+                                <i class="fas fa-trophy text-muted fa-3x"></i>
+                            </div>
+                            <h6 class="text-muted">Nenhuma conquista ainda</h6>
+                            <p class="small text-muted mb-0">Continue interagindo para desbloquear conquistas!</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Próximas Conquistas -->
+            <div class="card shadow-sm mt-4">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">🎯 Próximas Conquistas</h5>
+                    <div class="next-achievements">
+                        {% with user_achievements=user.profile.achievements.all %}
+                            {% for achievement in all_achievements %}
+                                {% if achievement not in user_achievements %}
+                                    <div class="achievement-card p-3 border rounded mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="achievement-icon me-3 opacity-50">
+                                                <span style="font-size: 2rem;">{{ achievement.icon }}</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-1 text-muted">{{ achievement.name }}</h6>
+                                                <p class="mb-0 small text-muted">{{ achievement.description }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

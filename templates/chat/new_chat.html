@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}Nova Conversa - HangoutStreak{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3 mb-0">Nova Conversa</h1>
+                <a href="{% url 'chat:inbox' %}" class="btn btn-outline-primary">
+                    <i class="fas fa-arrow-left me-2"></i>Voltar
+                </a>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <label for="userSearch" class="form-label">Buscar Usuário</label>
+                        <input type="text" class="form-control" id="userSearch" placeholder="Digite o nome do usuário...">
+                    </div>
+
+                    <div id="searchResults" class="list-group">
+                        <!-- Results will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="userTemplate">
+    <form method="post" action="{% url 'chat:new_chat' %}" class="list-group-item list-group-item-action">
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="">
+        <button type="submit" class="btn w-100 text-start p-0">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-user-circle fa-2x me-3 text-muted"></i>
+                <div>
+                    <h6 class="mb-0 username"></h6>
+                    <small class="text-muted full-name"></small>
+                </div>
+            </div>
+        </button>
+    </form>
+</template>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let searchTimeout = null;
+const userSearch = document.getElementById('userSearch');
+const searchResults = document.getElementById('searchResults');
+const userTemplate = document.getElementById('userTemplate');
+
+userSearch.addEventListener('input', function(e) {
+    clearTimeout(searchTimeout);
+    const query = e.target.value.trim();
+    
+    if (query.length < 2) {
+        searchResults.innerHTML = '';
+        return;
+    }
+    
+    searchTimeout = setTimeout(() => {
+        fetch(`{% url 'chat:search_users' %}?q=${encodeURIComponent(query)}`)
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Search results:', data);
+                searchResults.innerHTML = '';
+                
+                if (!data.users || !Array.isArray(data.users)) {
+                    throw new Error('Invalid response format');
+                }
+                
+                if (data.users.length === 0) {
+                    searchResults.innerHTML = `
+                        <div class="text-center text-muted py-3">
+                            <i class="fas fa-user-slash me-2"></i>
+                            Nenhum usuário encontrado
+                        </div>
+                    `;
+                    return;
+                }
+                
+                data.users.forEach(user => {
+                    const template = userTemplate.content.cloneNode(true);
+                    const form = template.querySelector('form');
+                    const userIdInput = template.querySelector('input[name="user_id"]');
+                    const username = template.querySelector('.username');
+                    const fullName = template.querySelector('.full-name');
+                    
+                    userIdInput.value = user.id;
+                    username.textContent = user.username;
+                    
+                    const fullNameText = [user.first_name, user.last_name]
+                        .filter(Boolean)
+                        .join(' ');
+                    
+                    if (fullNameText) {
+                        fullName.textContent = fullNameText;
+                    } else {
+                        fullName.remove();
+                    }
+                    
+                    searchResults.appendChild(template);
+                });
+            })
+            .catch(error => {
+                console.error('Error searching users:', error);
+                searchResults.innerHTML = `
+                    <div class="text-center text-danger py-3">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        Erro ao buscar usuários
+                    </div>
+                `;
+            });
+    }, 300);
+});
+</script>
+{% endblock %}

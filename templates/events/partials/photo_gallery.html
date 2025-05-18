@@ -1,0 +1,19 @@
+{% if photos %}
+    <div class="row g-4 photo-grid">
+        {% for photo in photos %}
+            {% include 'events/partials/photo_card.html' with photo=photo %}
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="text-center py-5">
+        <div class="mb-3">
+            <i class="fas fa-images text-muted fa-3x"></i>
+        </div>
+        <h5 class="text-muted">Nenhuma foto ainda</h5>
+        {% if request.user in event.participants.all or request.user == event.creator %}
+            <p class="text-muted mb-0">Seja o primeiro a adicionar uma foto!</p>
+        {% else %}
+            <p class="text-muted mb-0">Participe do evento para adicionar fotos.</p>
+        {% endif %}
+    </div>
+{% endif %} 

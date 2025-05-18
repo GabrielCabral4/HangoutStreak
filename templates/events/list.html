@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}Eventos - HangoutStreak{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Eventos</h1>
+        <a href="{% url 'events:create' %}" class="btn btn-primary">
+            <i class="fas fa-plus me-2"></i>Criar Evento
+        </a>
+    </div>
+
+    <!-- Próximos Eventos -->
+    <h2 class="h4 mb-3">Próximos Eventos</h2>
+    {% if upcoming_events %}
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+            {% for event in upcoming_events %}
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        {% if event.image %}
+                            <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}" style="height: 200px; object-fit: cover;">
+                        {% else %}
+                            <div class="bg-light text-center py-5">
+                                <i class="fas fa-calendar-alt fa-3x text-muted"></i>
+                            </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ event.title }}</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-map-marker-alt me-1"></i>{{ event.location }}
+                            </p>
+                            <p class="card-text">
+                                {{ event.description|truncatewords:30 }}
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">
+                                    <i class="fas fa-clock me-1"></i>{{ event.date|date:"d/m/Y H:i" }}
+                                </small>
+                                <a href="{% url 'events:detail' event.id %}" class="btn btn-outline-primary btn-sm">
+                                    Ver Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>Não há eventos próximos.
+        </div>
+    {% endif %}
+
+    <!-- Eventos Passados -->
+    <h2 class="h4 mb-3">Eventos Passados</h2>
+    {% if past_events %}
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for event in past_events %}
+                <div class="col">
+                    <div class="card h-100 shadow-sm bg-light">
+                        {% if event.image %}
+                            <img src="{{ event.image.url }}" class="card-img-top opacity-50" alt="{{ event.title }}" style="height: 200px; object-fit: cover;">
+                        {% else %}
+                            <div class="bg-light text-center py-5">
+                                <i class="fas fa-calendar-alt fa-3x text-muted opacity-50"></i>
+                            </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title text-muted">{{ event.title }}</h5>
+                            <p class="card-text text-muted">
+                                <i class="fas fa-map-marker-alt me-1"></i>{{ event.location }}
+                            </p>
+                            <p class="card-text text-muted">
+                                {{ event.description|truncatewords:30 }}
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">
+                                    <i class="fas fa-clock me-1"></i>{{ event.date|date:"d/m/Y H:i" }}
+                                </small>
+                                <a href="{% url 'events:detail' event.id %}" class="btn btn-outline-secondary btn-sm">
+                                    Ver Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>Não há eventos passados.
+        </div>
+    {% endif %}
+</div>
+{% endblock %} 

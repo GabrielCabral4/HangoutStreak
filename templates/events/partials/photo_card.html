@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="col-md-4 photo-card">
+    <div class="card shadow-sm h-100">
+        <img src="{{ photo.image.url }}" class="card-img-top" alt="Foto do evento" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+            {% if photo.caption %}
+                <p class="card-text">{{ photo.caption }}</p>
+            {% endif %}
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="small text-muted">
+                    <img src="{% if photo.user.profile.avatar %}{{ photo.user.profile.avatar.url }}{% else %}{% static 'img/default-avatar.png' %}{% endif %}" 
+                         class="rounded-circle me-1" style="width: 24px; height: 24px;" alt="{{ photo.user.username }}">
+                    {{ photo.user.username }}
+                </div>
+                <small class="text-muted">{{ photo.created_at|timesince }} atrás</small>
+            </div>
+        </div>
+        {% if request.user == photo.user or request.user == event.creator %}
+            <div class="card-footer bg-white">
+                <a href="{% url 'events:delete_photo' photo.id %}" class="btn btn-outline-danger btn-sm delete-photo">
+                    <i class="fas fa-trash me-1"></i>Deletar
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div> 

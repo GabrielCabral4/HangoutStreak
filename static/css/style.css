@@ -1,0 +1,122 @@
+/* Variáveis CSS personalizadas */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+/* Estilos gerais */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Cards personalizados */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Botões personalizados */
+.btn {
+    border-radius: 25px;
+    padding: 8px 20px;
+}
+
+/* Animações */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+}
+
+/* Estilos para o chat */
+.chat-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.chat-message-sent {
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: 20%;
+}
+
+.chat-message-received {
+    background-color: #f8f9fa;
+    margin-right: 20%;
+}
+
+/* Estilos para eventos */
+.event-card {
+    border-left: 5px solid var(--primary-color);
+}
+
+.event-card.past {
+    border-left-color: var(--secondary-color);
+}
+
+.event-card.upcoming {
+    border-left-color: var(--success-color);
+}
+
+/* Badges e indicadores */
+.streak-badge {
+    position: relative;
+    background: linear-gradient(45deg, var(--primary-color), var(--info-color));
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Formulários */
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--primary-color);
+} 

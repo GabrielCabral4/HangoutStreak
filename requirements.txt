@@ -1,0 +1,9 @@
+Django>=5.0
+Pillow
+django-crispy-forms
+crispy-bootstrap5
+djangorestframework
+django-cors-headers
+dj-rest-auth
+djangorestframework-simplejwt
+drf-yasg  # Para documentação da API

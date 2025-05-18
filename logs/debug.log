@@ -1,0 +1,736 @@
+INFO 2025-05-18 00:08:48,236 consumers 142085 140426881015808 User gabriel connected to chat 1
+INFO 2025-05-18 00:08:48,238 consumers 142085 140426881015808 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:09:18,788 consumers 142085 140426881015808 User Gabriel_Cabral disconnected from chat 1
+INFO 2025-05-18 00:09:19,473 consumers 142085 140426881015808 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:09:23,009 consumers 142085 140426881015808 User Gabriel_Cabral disconnected from chat 1
+INFO 2025-05-18 00:09:24,479 consumers 142085 140426881015808 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:09:33,709 consumers 142085 140426881015808 User gabriel disconnected from chat 1
+INFO 2025-05-18 00:09:34,225 consumers 142085 140426881015808 User gabriel connected to chat 1
+INFO 2025-05-18 00:09:43,681 consumers 142085 140426881015808 User Gabriel_Cabral disconnected from chat 1
+INFO 2025-05-18 00:09:44,774 consumers 142085 140426881015808 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:09:48,054 consumers 142085 140426881015808 User gabriel disconnected from chat 1
+INFO 2025-05-18 00:09:49,195 consumers 142085 140426881015808 User gabriel connected to chat 1
+INFO 2025-05-18 00:11:12,315 consumers 143191 140711843639296 User gabriel connected to chat 1
+INFO 2025-05-18 00:11:12,316 consumers 143191 140711843639296 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:11:21,252 consumers 143191 140711843639296 User Gabriel_Cabral disconnected from chat 1
+WARNING 2025-05-18 00:11:21,629 log 143191 140711761532480 Not Found: /favicon.ico
+INFO 2025-05-18 00:11:21,865 consumers 143191 140711843639296 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:11:25,157 consumers 143191 140711843639296 User Gabriel_Cabral disconnected from chat 1
+INFO 2025-05-18 00:11:26,459 consumers 143191 140711843639296 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:11:29,328 consumers 143191 140711843639296 User Gabriel_Cabral disconnected from chat 1
+INFO 2025-05-18 00:11:30,395 consumers 143191 140711843639296 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:13:11,757 consumers 144329 140633118056448 User gabriel connected to chat 1
+INFO 2025-05-18 00:13:11,758 consumers 144329 140633118056448 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:13:26,818 consumers 144329 140633118056448 User Gabriel_Cabral disconnected from chat 1
+WARNING 2025-05-18 00:13:27,148 log 144329 140633036355136 Not Found: /favicon.ico
+INFO 2025-05-18 00:13:27,327 consumers 144329 140633118056448 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:13:31,972 consumers 144329 140633118056448 User Gabriel_Cabral disconnected from chat 1
+INFO 2025-05-18 00:13:33,261 consumers 144329 140633118056448 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:16:42,920 consumers 145989 139743597666304 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:16:42,925 consumers 145989 139743597666304 User gabriel connected to chat 1
+INFO 2025-05-18 00:16:57,017 consumers 145989 139743597666304 User Gabriel_Cabral disconnected from chat 1
+INFO 2025-05-18 00:16:59,596 consumers 145989 139743597666304 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:17:07,563 consumers 145989 139743597666304 User gabriel disconnected from chat 1
+WARNING 2025-05-18 00:17:07,864 log 145989 139743514842688 Not Found: /favicon.ico
+INFO 2025-05-18 00:17:08,118 consumers 145989 139743597666304 User gabriel connected to chat 1
+INFO 2025-05-18 00:17:13,085 consumers 145989 139743597666304 User gabriel disconnected from chat 1
+INFO 2025-05-18 00:17:42,031 consumers 145989 139743597666304 User Gabriel_Cabral disconnected from chat 1
+INFO 2025-05-18 00:19:20,199 consumers 145989 139743597666304 Attempting to connect to chat 2
+INFO 2025-05-18 00:19:20,208 consumers 145989 139743597666304 Can access chat: True
+INFO 2025-05-18 00:19:20,211 consumers 145989 139743597666304 Added to group 2
+INFO 2025-05-18 00:19:20,212 consumers 145989 139743597666304 WebSocket connection accepted for user Gabriel_Cabral in event 2
+INFO 2025-05-18 00:19:40,315 consumers 145989 139743597666304 Left group 2 with code 1001
+INFO 2025-05-18 00:19:44,157 consumers 145989 139743597666304 Attempting to connect to chat 2
+INFO 2025-05-18 00:19:44,162 consumers 145989 139743597666304 Can access chat: True
+INFO 2025-05-18 00:19:44,164 consumers 145989 139743597666304 Added to group 2
+INFO 2025-05-18 00:19:44,165 consumers 145989 139743597666304 WebSocket connection accepted for user Gabriel_Cabral in event 2
+INFO 2025-05-18 00:19:45,247 consumers 145989 139743597666304 Left group 2 with code 1001
+INFO 2025-05-18 00:19:48,116 consumers 145989 139743597666304 User Gabriel_Cabral connected to chat 1
+INFO 2025-05-18 00:19:53,209 consumers 145989 139743597666304 User Gabriel_Cabral disconnected from chat 1
+WARNING 2025-05-18 00:30:53,505 log 152457 140571645568576 Not Found: /favicon.ico
+WARNING 2025-05-18 00:35:54,474 log 152457 140571645568576 Not Found: /favicon.ico
+WARNING 2025-05-18 00:36:30,161 log 152457 140571645568576 Not Found: /events/1/
+WARNING 2025-05-18 00:36:31,116 log 152457 140571645568576 Not Found: /favicon.ico
+ERROR 2025-05-18 00:38:08,625 log 152457 140571645568576 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 42, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+WARNING 2025-05-18 00:38:17,760 base 152457 140571656058432 Method Not Allowed (GET): /users/logout/
+WARNING 2025-05-18 00:38:17,766 log 152457 140571645568576 Method Not Allowed: /users/logout/
+ERROR 2025-05-18 00:42:59,653 log 152457 140571645568576 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 42, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+ERROR 2025-05-18 00:43:01,763 log 152457 140571645568576 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 42, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+ERROR 2025-05-18 00:43:03,595 log 152457 140571645568576 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 42, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+ERROR 2025-05-18 00:43:13,589 log 158456 140278655608384 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 42, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'rooms' not found. 'rooms' is not a valid view function or pattern name.
+WARNING 2025-05-18 00:43:23,434 base 158456 140278665049664 Method Not Allowed (GET): /users/logout/
+WARNING 2025-05-18 00:43:23,438 log 158456 140278655608384 Method Not Allowed: /users/logout/
+WARNING 2025-05-18 00:43:33,111 log 158456 140278655608384 Not Found: /favicon.ico
+WARNING 2025-05-18 00:43:35,807 base 158456 140278646167104 Method Not Allowed (GET): /users/logout/
+WARNING 2025-05-18 00:43:35,812 log 158456 140278655608384 Method Not Allowed: /users/logout/
+WARNING 2025-05-18 00:43:38,317 base 158456 140278646167104 Method Not Allowed (GET): /users/logout/
+WARNING 2025-05-18 00:43:38,322 log 158456 140278655608384 Method Not Allowed: /users/logout/
+ERROR 2025-05-18 00:43:40,875 log 158456 140278655608384 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 42, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'rooms' not found. 'rooms' is not a valid view function or pattern name.
+WARNING 2025-05-18 12:34:46,169 log 4429 140305671120448 Not Found: /favicon.ico
+WARNING 2025-05-18 12:40:00,378 log 6561 140051737474624 Not Found: /favicon.ico
+WARNING 2025-05-18 12:40:08,442 log 6561 140051737474624 Not Found: /favicon.ico
+WARNING 2025-05-18 12:40:21,900 log 6561 140051737474624 Not Found: /favicon.ico
+INFO 2025-05-18 12:40:50,284 consumers 6561 140051805384704 Attempting to connect to chat 2
+INFO 2025-05-18 12:40:50,287 consumers 6561 140051805384704 Can access chat: True
+INFO 2025-05-18 12:40:50,289 consumers 6561 140051805384704 Added to group 2
+INFO 2025-05-18 12:40:50,289 consumers 6561 140051805384704 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 12:40:54,101 consumers 6561 140051805384704 Left group 2 with code 1001
+INFO 2025-05-18 12:57:28,555 consumers 14505 140300826697728 Attempting to connect to chat 2
+INFO 2025-05-18 12:57:28,559 consumers 14505 140300826697728 Can access chat: True
+INFO 2025-05-18 12:57:28,562 consumers 14505 140300826697728 Added to group 2
+INFO 2025-05-18 12:57:28,563 consumers 14505 140300826697728 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 12:57:30,078 consumers 14505 140300826697728 Left group 2 with code 1001
+ERROR 2025-05-18 12:57:39,134 log 14505 140300665738816 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 33, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'rooms' not found. 'rooms' is not a valid view function or pattern name.
+INFO 2025-05-18 13:02:32,311 consumers 16897 140275581427712 Attempting to connect to chat 2
+INFO 2025-05-18 13:02:32,314 consumers 16897 140275581427712 Can access chat: True
+INFO 2025-05-18 13:02:32,316 consumers 16897 140275581427712 Added to group 2
+INFO 2025-05-18 13:02:32,316 consumers 16897 140275581427712 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 13:02:37,083 consumers 16897 140275581427712 Left group 2 with code 1001
+WARNING 2025-05-18 13:02:37,423 log 16897 140275489424960 Not Found: /favicon.ico
+INFO 2025-05-18 13:02:37,561 consumers 16897 140275581427712 Attempting to connect to chat 2
+INFO 2025-05-18 13:02:37,563 consumers 16897 140275581427712 Can access chat: True
+INFO 2025-05-18 13:02:37,564 consumers 16897 140275581427712 Added to group 2
+INFO 2025-05-18 13:02:37,565 consumers 16897 140275581427712 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 13:02:43,571 consumers 16897 140275581427712 Left group 2 with code 1001
+INFO 2025-05-18 13:03:07,939 consumers 16897 140275581427712 Attempting to connect to chat 3
+INFO 2025-05-18 13:03:07,941 consumers 16897 140275581427712 Can access chat: True
+INFO 2025-05-18 13:03:07,942 consumers 16897 140275581427712 Added to group 3
+INFO 2025-05-18 13:03:07,943 consumers 16897 140275581427712 WebSocket connection accepted for user Usuarioteste in event 3
+INFO 2025-05-18 13:03:15,739 consumers 16897 140275581427712 Left group 3 with code 1001
+INFO 2025-05-18 13:03:16,310 consumers 16897 140275581427712 Attempting to connect to chat 3
+INFO 2025-05-18 13:03:16,313 consumers 16897 140275581427712 Can access chat: True
+INFO 2025-05-18 13:03:16,314 consumers 16897 140275581427712 Added to group 3
+INFO 2025-05-18 13:03:16,314 consumers 16897 140275581427712 WebSocket connection accepted for user Usuarioteste in event 3
+WARNING 2025-05-18 13:03:16,435 log 16897 140275489424960 Not Found: /favicon.ico
+INFO 2025-05-18 13:03:29,769 consumers 16897 140275581427712 Left group 3 with code 1001
+INFO 2025-05-18 13:03:35,389 consumers 16897 140275581427712 Attempting to connect to chat 2
+INFO 2025-05-18 13:03:35,392 consumers 16897 140275581427712 Can access chat: True
+INFO 2025-05-18 13:03:35,393 consumers 16897 140275581427712 Added to group 2
+INFO 2025-05-18 13:03:35,393 consumers 16897 140275581427712 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 13:03:42,670 consumers 16897 140275581427712 Left group 2 with code 1001
+INFO 2025-05-18 13:03:48,741 consumers 16897 140275581427712 Attempting to connect to chat 2
+INFO 2025-05-18 13:03:48,744 consumers 16897 140275581427712 Can access chat: True
+INFO 2025-05-18 13:03:48,744 consumers 16897 140275581427712 Added to group 2
+INFO 2025-05-18 13:03:48,745 consumers 16897 140275581427712 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 13:05:43,740 consumers 18510 140399201222656 Attempting to connect to chat 2
+INFO 2025-05-18 13:05:43,771 consumers 18510 140399201222656 Can access chat: True
+INFO 2025-05-18 13:05:43,772 consumers 18510 140399201222656 Added to group 2
+INFO 2025-05-18 13:05:43,772 consumers 18510 140399201222656 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 13:05:52,139 consumers 18510 140399201222656 Left group 2 with code 1001
+INFO 2025-05-18 13:05:52,463 consumers 18510 140399201222656 Attempting to connect to chat 2
+INFO 2025-05-18 13:05:52,469 consumers 18510 140399201222656 Can access chat: True
+INFO 2025-05-18 13:05:52,470 consumers 18510 140399201222656 Added to group 2
+INFO 2025-05-18 13:05:52,470 consumers 18510 140399201222656 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 13:05:56,087 consumers 18510 140399201222656 Left group 2 with code 1001
+WARNING 2025-05-18 13:06:18,278 log 18510 140399098705472 Not Found: /static/img/default-avatar.png
+WARNING 2025-05-18 13:06:32,043 log 18510 140399098705472 Not Found: /static/img/default-avatar.png
+INFO 2025-05-18 13:07:28,163 consumers 18510 140399201222656 Attempting to connect to chat 2
+INFO 2025-05-18 13:07:28,171 consumers 18510 140399201222656 Can access chat: True
+INFO 2025-05-18 13:07:28,172 consumers 18510 140399201222656 Added to group 2
+INFO 2025-05-18 13:07:28,172 consumers 18510 140399201222656 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 13:07:29,756 consumers 18510 140399201222656 Left group 2 with code 1001
+WARNING 2025-05-18 13:09:30,111 log 20174 139872245376576 Not Found: /static/img/default-avatar.png
+WARNING 2025-05-18 13:09:30,320 log 20174 139872245376576 Not Found: /favicon.ico
+INFO 2025-05-18 13:09:39,730 consumers 20174 139872407539712 Attempting to connect to chat 2
+INFO 2025-05-18 13:09:39,735 consumers 20174 139872407539712 Can access chat: True
+INFO 2025-05-18 13:09:39,737 consumers 20174 139872407539712 Added to group 2
+INFO 2025-05-18 13:09:39,737 consumers 20174 139872407539712 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 13:09:46,144 consumers 20174 139872407539712 Left group 2 with code 1001
+INFO 2025-05-18 13:09:50,408 consumers 20174 139872407539712 Attempting to connect to chat 2
+INFO 2025-05-18 13:09:50,412 consumers 20174 139872407539712 Can access chat: True
+INFO 2025-05-18 13:09:50,413 consumers 20174 139872407539712 Added to group 2
+INFO 2025-05-18 13:09:50,413 consumers 20174 139872407539712 WebSocket connection accepted for user Usuarioteste in event 2
+WARNING 2025-05-18 13:10:17,923 log 20174 139872245376576 Not Found: /favicon.ico
+INFO 2025-05-18 13:10:27,602 consumers 20174 139872407539712 Attempting to connect to chat 2
+INFO 2025-05-18 13:10:27,605 consumers 20174 139872407539712 Can access chat: True
+INFO 2025-05-18 13:10:27,607 consumers 20174 139872407539712 Added to group 2
+INFO 2025-05-18 13:10:27,607 consumers 20174 139872407539712 WebSocket connection accepted for user Gabriel_Cabral in event 2
+INFO 2025-05-18 13:10:29,463 consumers 20174 139872407539712 Left group 2 with code 1001
+INFO 2025-05-18 13:10:41,570 consumers 20174 139872407539712 Attempting to connect to chat 2
+INFO 2025-05-18 13:10:41,572 consumers 20174 139872407539712 Can access chat: True
+INFO 2025-05-18 13:10:41,573 consumers 20174 139872407539712 Added to group 2
+INFO 2025-05-18 13:10:41,574 consumers 20174 139872407539712 WebSocket connection accepted for user Gabriel_Cabral in event 2
+INFO 2025-05-18 13:10:43,479 consumers 20174 139872407539712 Left group 2 with code 1001
+INFO 2025-05-18 13:10:46,499 consumers 20174 139872407539712 Attempting to connect to chat 2
+INFO 2025-05-18 13:10:46,501 consumers 20174 139872407539712 Can access chat: True
+INFO 2025-05-18 13:10:46,502 consumers 20174 139872407539712 Added to group 2
+INFO 2025-05-18 13:10:46,503 consumers 20174 139872407539712 WebSocket connection accepted for user Gabriel_Cabral in event 2
+INFO 2025-05-18 13:11:53,401 consumers 20174 139872407539712 Left group 2 with code 1001
+ERROR 2025-05-18 13:12:20,640 log 20174 139872245376576 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 33, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'rooms' not found. 'rooms' is not a valid view function or pattern name.
+INFO 2025-05-18 13:12:20,663 consumers 20174 139872407539712 Left group 2 with code 1001
+ERROR 2025-05-18 13:14:43,586 log 20174 139872245376576 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 33, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'rooms' not found. 'rooms' is not a valid view function or pattern name.
+ERROR 2025-05-18 13:15:10,440 log 22831 139962395649600 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gabriel/HangoutStreak/users/views.py", line 33, in profile
+    return render(request, 'users/profile.html', context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/gabriel/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logout' not found. 'logout' is not a valid view function or pattern name.
+WARNING 2025-05-18 13:15:10,564 log 22831 139962395649600 Not Found: /favicon.ico
+WARNING 2025-05-18 13:16:38,695 log 23642 140057755240000 Not Found: /static/css/style.css
+WARNING 2025-05-18 13:16:38,696 log 23642 140057763632704 Not Found: /static/js/main.js
+WARNING 2025-05-18 13:16:38,973 log 23642 140057763632704 Not Found: /favicon.ico
+WARNING 2025-05-18 13:16:49,706 log 23642 140057755240000 Not Found: /static/css/style.css
+WARNING 2025-05-18 13:16:49,720 log 23642 140057755240000 Not Found: /static/js/main.js
+WARNING 2025-05-18 13:16:54,703 log 23642 140057763632704 Not Found: /static/css/style.css
+WARNING 2025-05-18 13:16:54,705 log 23642 140057755240000 Not Found: /static/js/main.js
+WARNING 2025-05-18 13:17:24,671 log 23642 140057755240000 Not Found: /static/js/main.js
+WARNING 2025-05-18 13:17:24,672 log 23642 140057763632704 Not Found: /static/css/style.css
+INFO 2025-05-18 13:17:34,589 consumers 23642 140057849929728 Attempting to connect to chat 2
+INFO 2025-05-18 13:17:34,592 consumers 23642 140057849929728 Can access chat: True
+INFO 2025-05-18 13:17:34,594 consumers 23642 140057849929728 Added to group 2
+INFO 2025-05-18 13:17:34,594 consumers 23642 140057849929728 WebSocket connection accepted for user Usuarioteste in event 2
+INFO 2025-05-18 13:17:40,578 consumers 23642 140057849929728 Left group 2 with code 1001
+WARNING 2025-05-18 13:17:47,200 log 23642 140057763632704 Not Found: /static/css/style.css
+WARNING 2025-05-18 13:17:47,214 log 23642 140057763632704 Not Found: /static/js/main.js
+WARNING 2025-05-18 13:17:52,806 log 23642 140057763632704 Not Found: /static/css/style.css
+WARNING 2025-05-18 13:17:52,842 log 23642 140057755240000 Not Found: /static/js/main.js
+INFO 2025-05-18 13:19:23,205 consumers 23642 140057849929728 Attempting to connect to chat 3
+INFO 2025-05-18 13:19:23,207 consumers 23642 140057849929728 Can access chat: True
+INFO 2025-05-18 13:19:23,208 consumers 23642 140057849929728 Added to group 3
+INFO 2025-05-18 13:19:23,209 consumers 23642 140057849929728 WebSocket connection accepted for user Usuarioteste in event 3
+INFO 2025-05-18 13:19:24,378 consumers 23642 140057849929728 Left group 3 with code 1001
+WARNING 2025-05-18 13:22:51,519 log 23642 140057755240000 Not Found: /static/css/style.css
+WARNING 2025-05-18 13:22:51,540 log 23642 140057763632704 Not Found: /static/js/main.js
